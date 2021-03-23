@@ -23,13 +23,15 @@ function edge_detection(image_data, height, width, src) {
     var out = [];
     let dst = new cv.Mat();
     console.log("image_source", image_data)
-    let image = cv.imread(src)
+    let image = cv.imread(src);
+    console.log(image);
     cv.cvtColor(image, image, cv.COLOR_RGB2GRAY, 0)
     cv.Canny(image,dst, 50, 150, 3, false)
-    // console.log(cv.ArrayFrommat)
+    console.log(dst.data);
     cv.imshow('output-canvas', dst);
     image.delete();
-    document.getElementById("detection_indicator").style.visibility = "visible";
+    dst.delete();
+    // document.getElementById("detection_indicator").style.visibility = "visible";
 
     // dst.delete()
 }
