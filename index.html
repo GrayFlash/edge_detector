@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+
+        <link rel="stylesheet" href="./static/styles.css">
+    </head>
+    <body>
+      <div class="title">
+          <h2>Canny Edge Detector and nearest point locator</h2>
+      </div>
+
+      <div class="upload">
+          <input id="image-upload" class="hidden" type="file" accept="image/x-png, image/jpeg, image/jpg"/>
+          <label for="image-upload" id="file-drag" class="upload-box">
+            <div id="upload-caption">Drop image here or click to select</div>
+            <img id="image-preview" class="hidden" />
+          </label>
+      </div>
+      <br>
+      <br>
+      <div>
+        <canvas id="input-canvas"></canvas>
+      </div>
+      <br>
+      <br>
+      <br>
+      <div id="detection_indicator" hidden>
+          <h4>The Edge has been Detected</h4>
+      </div>
+      <div>
+        <canvas id="output-canvas"></canvas>
+      </div>
+    </body>
+    <!-- <script src="./js/opencv.js" type="text/javascript"></script> -->
+    <script src="./js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/wallat/compiled-opencvjs/v4.2.0/opencv.js" type="text/javascript"></script>
+</html>
