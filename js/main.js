@@ -1,4 +1,14 @@
 document.getElementById('image-upload').onchange = function(e) {
+    const file = this.files[0];
+    // console.log(file);
+    if (file){
+        let reader = new FileReader();
+        reader.onload = function(event){
+            console.log(event.target.result);
+            $('#imgPreview').attr('src', event.target.result);
+        }
+        reader.readAsDataURL(file);
+    }
     var img = new Image();
     img.onload = draw;
     img.onerror = failed;
@@ -6,8 +16,8 @@ document.getElementById('image-upload').onchange = function(e) {
 };
 function draw() {
     var canvas = document.getElementById('input-canvas');
-    canvas.width = 640;
-    canvas.height = 300;
+    canvas.width = this.width;
+    canvas.height = this.height;
     console.log(this.src);
     var ctx = canvas.getContext('2d');
     ctx.drawImage(this, 0,0);

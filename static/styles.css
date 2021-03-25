@@ -8,4 +8,14 @@
   width: 300px;
   margin-right: 10px;
 }
-  
+.holder {
+  height: 300px;
+  width: 300px;
+  border: 2px solid black;
+}
+img {
+  max-width: 300px;
+  max-height: 300px;
+  min-width: 300px;
+  min-height: 300px;
+}
