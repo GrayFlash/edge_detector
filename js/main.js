@@ -22,16 +22,16 @@ function failed() {
 function edge_detection(image_data, height, width, src) {
     var out = [];
     let dst = new cv.Mat();
-    console.log("image_source", image_data)
+    // console.log("image_source", image_data)
     let image = cv.imread(src);
-    console.log(image);
-    cv.cvtColor(image, image, cv.COLOR_RGB2GRAY, 0)
-    cv.Canny(image,dst, 50, 150, 3, false)
-    console.log(dst.data);
+    // console.log(image);
+    cv.cvtColor(image, image, cv.COLOR_RGB2GRAY, 0) //Converting Image to GrayScale
+    cv.Canny(image,dst, 50, 150, 3, false) // Performing Canny Edge Detection
+    console.log(dst);
     cv.imshow('output-canvas', dst);
     image.delete();
     dst.delete();
     // document.getElementById("detection_indicator").style.visibility = "visible";
-
+    output_canvas();
     // dst.delete()
 }
