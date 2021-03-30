@@ -38,10 +38,10 @@ function edge_detection(image_data, height, width, src) {
     cv.cvtColor(image, image, cv.COLOR_RGB2GRAY, 0) //Converting Image to GrayScale
     cv.Canny(image,dst, 50, 150, 3, false) // Performing Canny Edge Detection
     console.log(dst);
-    cv.imshow('output-canvas', dst);
+    cv.imshow('edge-canvas', dst);
     image.delete();
     dst.delete();
-    // document.getElementById("detection_indicator").style.visibility = "visible";
+    document.getElementById("detection_indicator").style.visibility = "visible";
     output_canvas();
     // dst.delete()
 }

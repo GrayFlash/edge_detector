@@ -19,3 +19,17 @@ img {
   min-width: 300px;
   min-height: 300px;
 }
+.status {
+  visibility: hidden;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+}
+
+.upload {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}

@@ -11,7 +11,10 @@ detected.addEventListener("mousedown", function(e){
     var c1 = document.getElementById('output-canvas');
     var img = cv.imread(c1);
 
-    cv.imshow('output-canvas',img);
+    var edgy_canvas = document.getElementById('edge-canvas');
+    var edges = cv.imread(edgy_canvas);
+
+    // cv.imshow('output-canvas',img);
     var min_x=0;
     var min_y=0;
     var row = img.rows;
@@ -20,7 +23,7 @@ detected.addEventListener("mousedown", function(e){
     for(var i=0; i<row; ++i){
         for(var j=0; j<col; ++j){
             var index = (i*col+j)*4;
-            if(img.data[index] + img.data[index+1]+ img.data[index+2] == 0){
+            if(edges.data[index] + edges.data[index+1]+ edges.data[index+2] == 0){
                 var x_i = j;
                 var y_i = i;
 

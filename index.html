@@ -7,30 +7,35 @@
     </head>
     <body>
       <div class="title">
-          <h2>Canny Edge Detector and nearest point locator</h2>
+          <h2>Detecting edges in image and finding closest edge from a point</h2>
       </div>
-
+      <br><br>
       <div class="upload">
           <input id="image-upload" class="hidden" type="file" accept="image/x-png, image/jpeg, image/jpg"/>
           <label for="image-upload" id="file-drag">
-            <div id="upload-caption">Drop image here or click to select</div>
-            <div class="holder">
-              <img id="image-preview" src="#"/>
-            </div>
+            <div id="upload-caption">click to select</div>
           </label>
       </div>
       <br>
       <br>
-      <div>
-        <canvas id="input-canvas" hidden></canvas>
+      <div class="input-canvas">
+        <canvas id="input-canvas"></canvas>
       </div>
+
+      <div>
+        <canvas id="edge-canvas" hidden></canvas>
+      </div>
+      
       <br>
-      <br>
-      <br>
-      <div id="detection_indicator" hidden>
+      <div id="detection_indicator" class="status">
           <h4>The Edge has been Detected</h4>
+          <p>Please select the point on canvas below to detect it's closest edge</p>
       </div>
-      <div>
+
+      <br>
+      <br>
+
+      <div class="ouput-canvas">
         <canvas id="output-canvas"></canvas>
       </div>
     </body>
