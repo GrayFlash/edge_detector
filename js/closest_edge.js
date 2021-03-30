@@ -8,8 +8,9 @@ detected.addEventListener("mousedown", function(e){
     var y = Math.abs(Math.ceil(e.clientY - rect.top)); 
     console.log("Coordinate x: " + x,
                 "Coordinate y: " + y);
-    var c1 = document.getElementById('output-canvas');
-    var img = cv.imread(c1);
+
+    var out_canvas = document.getElementById('output-canvas');
+    var img = cv.imread(out_canvas);
 
     var edgy_canvas = document.getElementById('edge-canvas');
     var edges = cv.imread(edgy_canvas);
@@ -37,11 +38,11 @@ detected.addEventListener("mousedown", function(e){
             }
         }
     }
-    var ctx = c1.getContext("2d");
+    var ctx = out_canvas.getContext("2d");
     ctx.beginPath();
     ctx.moveTo(x, y);
     ctx.lineTo(min_x, min_y);
     ctx.lineWidth = 5;
     ctx.stroke();
-    console.log(min_dis, min_x, min_y);
+    // console.log(min_dis, min_x, min_y);
 })

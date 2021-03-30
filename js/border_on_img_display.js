@@ -1,8 +1,8 @@
 function output_canvas() {
-    var c1 = document.getElementById('input-canvas');
-    var c2 = document.getElementById('edge-canvas');
-    let img = cv.imread(c1);
-    let edges = cv.imread(c2);
+    var in_canvas = document.getElementById('input-canvas');
+    var edgy_canvas = document.getElementById('edge-canvas');
+    let img = cv.imread(in_canvas);
+    let edges = cv.imread(edgy_canvas);
     let e2 = edges;
     var row = img.rows;
     var col = img.cols;
